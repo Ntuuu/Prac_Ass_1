@@ -2,18 +2,14 @@
 #define SQUARE_H
 #include "Shape.h"
 
-class Square : public Shape {
-    private:
-        int length;
-        int width;
-        std::string color;
-        int position_x;
-        int position_y;
 
+class Square : public Shape {
     public:
+        Square(int side, std::string c, int posx, int posy);
+
         Shape* clone() const {
             return new Square(*this);
         }
 };
 
-#endif // TEXTBOX_H
+#endif // SQUARE_H

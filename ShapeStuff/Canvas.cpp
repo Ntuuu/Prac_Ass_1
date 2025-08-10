@@ -2,17 +2,18 @@
 
 Canvas::Canvas(){
 
-    this->shapes = NULL;
+    // this->shapes = NULL;
+    this->shapes.clear();
 
 }
 
 Canvas::~Canvas(){
-    if(this->shapes != NULL){
-        delete[] this->shapes;
-        this->shapes = NULL;
+    if(!this->shapes.empty()){
+        this->shapes.clear();
     }
 }
 
-// Canvas::Canvas(const Canvas& other){
+void Canvas::addShape(const Shape& shape) {
+    this->shapes.push_back(shape);
+}
 
-// }

@@ -1,6 +1,9 @@
 #include "SquareFactory.h"
-#include "Square.h"
 
-Shape* SquareFactory::createShape() {
-    return new Square();
+Shape* SquareFactory::createShape(int side, std::string color, int posx, int posy) {
+    return new Square(side, color, posx, posy);
+}
+
+void SquareFactory::toString() {
+    std::cout << "SquareFactory: Creating a square shape." << std::endl;
 }

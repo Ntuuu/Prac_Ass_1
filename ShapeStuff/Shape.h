@@ -8,12 +8,15 @@
 class Shape; // Forward declaration of Shapes class
 
 class Shape {
-    private:
+    protected:
         int length;
         int width;
         std::string color;
         int position_x;
         int position_y;
+    public:
+        Shape(int l, int w, std::string c, int posx, int posy);
+        // ~Shape();
 };
 
 

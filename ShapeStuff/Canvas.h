@@ -1,15 +1,19 @@
 #ifndef CANVAS_H
 #define CANVAS_H
 #include "Shape.h"
+#include <vector>
+#include "Memento.h"
 
 class Canvas {
-    // private:
-    //     // virtual ~Shapes() = default;
-    //     // virtual void draw() const = 0;
-    //     static int count;
+    private:
+        std::vector<Shape> shapes;
+        // Shape* shapes;
     public:
-        Shape* shapes;
-    // int size;
+        Canvas();
+        ~Canvas();
+        void addShape(const Shape& shape);
+        Memento* captureCurrent();
+        void undoAction(Memento* prev);
 };
 
 #endif 

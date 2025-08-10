@@ -4,14 +4,10 @@
 
 class Textbox : public Shape {
     private:
-        int length;
-        int width;
-        std::string color;
-        int position_x;
-        int position_y;
         std::string text;
-
     public:
+        Textbox(int l, int w, std::string c, int posx, int posy, std::string text);
+
         Shape* clone() const {
             return new Textbox(*this);
         }
