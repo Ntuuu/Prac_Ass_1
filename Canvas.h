@@ -1,6 +1,6 @@
 #ifndef CANVAS_H
 #define CANVAS_H
-#include "Shapes.h"
+#include "Shape.h"
 
 class Canvas {
     // private:
@@ -8,7 +8,7 @@ class Canvas {
     //     // virtual void draw() const = 0;
     //     static int count;
     public:
-        Shapes* shapes;
+        Shape* shapes;
     // int size;
 };
 
