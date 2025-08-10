@@ -2,7 +2,6 @@
 #define SHAPEFACTORY_H
 #include "Shape.h"
 
-class Shape; // forward decleration
 
 class ShapeFactory {
     private:
@@ -10,6 +9,8 @@ class ShapeFactory {
     protected:
         virtual Shape* createShape() = 0;
         virtual void toString();
+    public:
+        friend class Canvas;
 };
 
 #endif // SHAPEFACTORY_H
