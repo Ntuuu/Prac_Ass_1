@@ -1,10 +1,11 @@
 #ifndef SquareFactory_H
 #define SquareFactory_H
 #include "ShapeFactory.h"
+#include "Square.h"
 
 class SquareFactory : public ShapeFactory {
     public:
-        Shape* createShape();
+        Shape* createShape(int side, std::string color, int posx, int posy);
         void toString();
 
     };
