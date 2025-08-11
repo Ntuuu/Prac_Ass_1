@@ -6,8 +6,8 @@
 class Square : public Shape {
     public:
         Square(int side, std::string c, int posx, int posy);
-
-        Shape* clone() const {
+        std::vector<std::string> draw() const override;
+        Square* clone() const {
             return new Square(*this);
         }
 };

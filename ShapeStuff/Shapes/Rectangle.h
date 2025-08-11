@@ -6,8 +6,9 @@
 class Rectangle : public Shape {
     public:
         Rectangle(int l, int w, std::string c, int posx, int posy);
-
-        Shape* clone() const {
+        std::vector<std::string> draw() const override;
+        // void draw(std::vector<std::string> &buffer) const override;
+        Rectangle* clone() const {
             return new Rectangle(*this);
         }
 };

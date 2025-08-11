@@ -7,7 +7,7 @@
 
 class RectangleFactory : public ShapeFactory {
     public:
-        Shape* createShape(int l, int w, std::string c, int posx, int posy);
+        Shape* createShape(int l, int w, std::string c, int posx, int posy, std::string text) const override;
         void toString() const;
 
     };

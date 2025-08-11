@@ -4,8 +4,8 @@
 
 class TextboxFactory : public ShapeFactory {
     public:
-        Shape* createShape(int l, int w, std::string c, int posx, int posy, std::string text);
-        void toString();
+        Shape* createShape(int l, int w, std::string c, int posx, int posy, std::string text) const override;
+        void toString() const override;
 
     };
 #endif // TEXTBOXFACTORY

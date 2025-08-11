@@ -1,19 +1,25 @@
 #include "Canvas.h"
 
-Canvas::Canvas(){
+// Canvas::Canvas(std::vector<Shape*> shapes) {
+//     this->shapes = shapes;
+// }
 
-    // this->shapes = NULL;
-    this->shapes.clear();
-
-}
 
 Canvas::~Canvas(){
     if(!this->shapes.empty()){
-        this->shapes.clear();
+        // this->shapes.clear();
+        for (auto shape : this->shapes) {
+            delete shape;
+        }
     }
 }
 
-void Canvas::addShape(const Shape& shape) {
+void Canvas::addShape(Shape* shape) {
+    // this->shapes.insert(this->shapes.end(), shapes.begin(), shapes.end());
     this->shapes.push_back(shape);
+}
+
+std::vector<Shape*> Canvas::getShapes() const {
+    return shapes;
 }
 

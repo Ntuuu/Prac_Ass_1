@@ -1,7 +1,7 @@
 #include "RectangleFactory.h"
 #include "Rectangle.h"
 
-Shape* RectangleFactory::createShape(int l, int w, std::string c, int posx, int posy) {
+Shape* RectangleFactory::createShape(int l, int w, std::string c, int posx, int posy, std::string text) const {
     return new Rectangle(l, w, c, posx, posy);
 }
 

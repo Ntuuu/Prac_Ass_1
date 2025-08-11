@@ -6,12 +6,14 @@
 
 class Canvas {
     private:
-        std::vector<Shape> shapes;
+        std::vector<Shape*> shapes;
         // Shape* shapes;
     public:
-        Canvas();
+        // Canvas(std::vector<Shape*> shapes);
         ~Canvas();
-        void addShape(const Shape& shape);
+        void addShape(Shape* shape);
+        std::vector<Shape*> getShapes() const;
+        void toString() const;
         Memento* captureCurrent();
         void undoAction(Memento* prev);
 };

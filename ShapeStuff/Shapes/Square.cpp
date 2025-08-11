@@ -8,3 +8,8 @@ Square::Square(int side, std::string c, int posx, int posy)
         this->position_x = posx;
         this->position_y = posy;
 }
+
+std::vector<std::string> Square::draw() const {
+        std::vector<std::string> buffer(width, std::string(width, '-'));
+        return buffer;
+    }

@@ -7,8 +7,8 @@ class Textbox : public Shape {
         std::string text;
     public:
         Textbox(int l, int w, std::string c, int posx, int posy, std::string text);
-
-        Shape* clone() const {
+        std::vector<std::string> draw() const override;
+        Textbox* clone() const {
             return new Textbox(*this);
         }
 };

@@ -12,10 +12,15 @@ class Shape {
         int length;
         int width;
         std::string color;
+        
+    public:
         int position_x;
         int position_y;
-    public:
+        // virtual void draw(std::vector<std::string> &buffer) const = 0;
+        virtual std::vector<std::string> draw() const = 0;
         Shape(int l, int w, std::string c, int posx, int posy);
+        int getHeight() const;
+        int getLength() const;
         // ~Shape();
 };
 
