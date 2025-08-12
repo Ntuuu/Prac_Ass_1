@@ -3,8 +3,9 @@
 #include "Canvas.h"
 #include <fstream>
 
+#pragma once
 class ExportCanvas {
-    private:
+    protected:
         std::vector<std::string> buffer;
         Canvas* canvas;
         virtual void prepareCanvas(Canvas* canvas);
