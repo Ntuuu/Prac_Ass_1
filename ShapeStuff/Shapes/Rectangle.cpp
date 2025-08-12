@@ -19,3 +19,7 @@ std::vector<std::string> Rectangle::draw() const {
     std::vector<std::string> buffer(width, std::string(length, '#'));
     return buffer;
 }
+
+std::string Rectangle::toString() const {
+    return "Rectangle";
+}

@@ -65,3 +65,8 @@ std::vector<std::string> Textbox::draw() const {
 
     return buffer;
 }
+
+std::string Textbox::toString() const {
+    // std::cout << "Textbox: " << text << std::endl;
+    return "textbox";
+}

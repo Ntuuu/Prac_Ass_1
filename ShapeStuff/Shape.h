@@ -21,6 +21,15 @@ class Shape {
         Shape(int l, int w, std::string c, int posx, int posy);
         int getHeight() const;
         int getLength() const;
+        std::string getColor() const;
+        int getPositionX() const;
+        int getPositionY() const;
+        void setLength(int l);
+        void setWidth(int w);
+        void setColor(std::string c);
+        void setPosition(int x, int y);
+        virtual std::string toString() const = 0;
+
         // ~Shape();
 };
 

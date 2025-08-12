@@ -5,6 +5,8 @@ void Menu::showMenu() {
     std::cout << "\n=== Shape Painter Menu ===\n";
     std::cout << "input options:\n";
     std::cout << "type: 'rectangle', 'square', 'textbox', etc.\n";
+    std::cout << "edit shape: 'edit' \n";
+    std::cout << "delete shape: 'delete' \n";
     std::cout << "print canvas: 'print' \n";
     std::cout << "exit program: 'exit' \n";
 }
@@ -32,6 +34,10 @@ void Menu::handleChoice(const std::string &input, std::string &filename, ShapeFa
         exit(0);
     } else if (input == "print") {
         exporter->exportToFile(canvas, filename);
+    } else if (input == "edit") {
+        editShape(factory);
+    } else if (input == "delete") {
+        deleteShape();
     } else {
         addShape(factory, input);
     }
@@ -43,7 +49,7 @@ void Menu::addShape(ShapeFactory* factory, const std::string &type) {
         std::cout << "Unknown shape type: " << type << "\n";
         return;
     }
-    
+
     int w, h, x, y;
     std::string colour, text;
 
@@ -67,6 +73,40 @@ void Menu::addShape(ShapeFactory* factory, const std::string &type) {
         canvas->addShape(shape);
     } else {
         std::cout << "Unknown shape type: " << type << "\n";
+    }
+}
+
+void Menu::editShape(ShapeFactory* factory) {
+    for (auto& shape : canvas->getShapes()) {
+        std::cout << "Do you want to edit this shape << " << shape->toString() << " >>? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            int l, w, x, y;
+            std::string colour;
+            std::cout << "Edit Shape - Length: "; std::cin >> l;
+            std::cout << "Width: "; std::cin >> w;
+            std::cout << "Colour: "; std::cin >> colour;
+            std::cout << "Position X: "; std::cin >> x;
+            std::cout << "Position Y: "; std::cin >> y;
+
+            canvas->editShape(shape, l, w, colour, x, y);
+        } else {
+            std::cout << "invalid choice" << std::endl;
+        }
+    }
+}
+
+void Menu::deleteShape() {
+    for (auto& shape : canvas->getShapes()) {
+        std::cout << "Do you want to delete this shape << " << shape->toString() << " >>? (y/n): ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') {
+            canvas->editShape(shape, 0, 0, "", 0, 0); // Reset shape properties
+        } else {
+            std::cout << "invalid choice" << std::endl;
+        }
     }
 }
 

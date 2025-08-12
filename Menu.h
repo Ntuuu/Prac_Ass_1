@@ -31,7 +31,9 @@ private:
     ShapeFactory* factory;
     void showMenu();
     void handleChoice(const std::string &input, std::string &filename, ShapeFactory* factory);
+    void deleteShape();
     void addShape(ShapeFactory* factory, const std::string &type);
+    void editShape(ShapeFactory* factory);
     // void addRectangle(ShapeFactory* factory);
     // void addSquare(ShapeFactory* factory);
     // void addTextbox(ShapeFactory* factory);

@@ -13,3 +13,7 @@ std::vector<std::string> Square::draw() const {
         std::vector<std::string> buffer(width, std::string(width, '-'));
         return buffer;
     }
+
+std::string Square::toString() const {
+    return "Square";
+}

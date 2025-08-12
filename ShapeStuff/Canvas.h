@@ -16,6 +16,8 @@ class Canvas {
         void toString() const;
         Memento* captureCurrent();
         void undoAction(Memento* prev);
+        void editShape(Shape* shape, int l, int w, std::string colour, int posx, int posy);
+        void deleteShape(Shape* shape);
 };
 
 #endif 
